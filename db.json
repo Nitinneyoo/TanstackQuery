@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "TanStack Query",
+      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
+      "author": "Nitin Singh"
+    },
+    {
+      "id": "2",
+      "title": "TanStack Query",
+      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
+      "author": "Subham Singh"
+    },
+    {
+      "id": "3",
+      "title": "TanStack Query",
+      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
+      "author": "Shivam Singh"
+    }
+  ]
+}
