@@ -1,13 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { PostsList } from '../HomePage/posts-list'
 
 export const Route = createFileRoute('/')({
-  component: Index,
+  component: PostsList,
 })
-
-function Index() {
-  return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
-    </div>
-  )
-}

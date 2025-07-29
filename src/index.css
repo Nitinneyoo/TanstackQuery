@@ -39,6 +39,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Geist", sans-serif;
+  --font-body: "Geist", sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui;
 }
 
 :root {

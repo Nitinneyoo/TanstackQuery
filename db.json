@@ -7,16 +7,30 @@
       "author": "Nitin Singh"
     },
     {
+      "id": "ee2f",
+      "title": "Science Update 6:37:56 PM",
+      "content": "This is a randomly generated post about science created at 7/29/2025, 6:37:56 PM",
+      "author": "Bob Wilson"
+    },
+    {
+      "id": "c62f",
+      "title": "Technology Update 6:37:59 PM",
+      "content": "This is a randomly generated post about technology created at 7/29/2025, 6:37:59 PM",
+      "author": "Emma Davis"
+    }
+  ],
+  "Todos": [
+    {
+      "id": "1",
+      "title": "Learn Tanstack Query"
+    },
+    {
       "id": "2",
-      "title": "TanStack Query",
-      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
-      "author": "Subham Singh"
+      "title": "Learn React Router"
     },
     {
       "id": "3",
-      "title": "TanStack Query",
-      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
-      "author": "Shivam Singh"
+      "title": "Learn Tailwind CSS"
     }
   ]
 }
