@@ -32,7 +32,7 @@ export function PostsList() {
           disabled={isCreating}
         >
           {isCreating ? "Creating..." : "Create Random Post"}
-        </Button> 
+        </Button>
       </div>
 
       <div className="grid gap-4">
