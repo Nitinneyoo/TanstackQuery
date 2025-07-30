@@ -1,37 +1,22 @@
 // src/TodosPage/TodosScreen.tsx
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import TodosQueryOptions from "@/QueryOption/TodosQueryOptions";
 import { Button } from "@/components/ui/button";
 import { Trash2, PlusCircle } from "lucide-react";
-import axios from "axios";
-import { queryClient } from "@/lib/queryClient";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { useCreateTodoMutation } from "@/QueryOption/createTodoMutationOptions";
+import { useDeleteTodoMutation } from "@/QueryOption/deleteTodoMutationOptions";
 
 export default function TodosScreen() {
   const [newTodo, setNewTodo] = useState("");
   const { data: todos, isLoading } = useQuery(TodosQueryOptions());
 
-  const { mutate: createTodo, isPending: isCreating } = useMutation({
-    mutationFn: async (title: string) => {
-      const response = await axios.post("http://localhost:4001/Todos", { title });
-      return response.data;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["Todos"] });
-      setNewTodo("");
-    },
+  const { mutate: createTodo, isPending: isCreating } = useCreateTodoMutation(() => {
+    setNewTodo("");
   });
 
-  const { mutate: deleteTodo, isPending: isDeleting } = useMutation({
-    mutationFn: async (todoId: string) => {
-      await axios.delete(`http://localhost:4001/Todos/${todoId}`);
-      return todoId;
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["Todos"] });
-    },
-  });
+  const { mutate: deleteTodo, isPending: isDeleting } = useDeleteTodoMutation();
 
   if (isLoading) {
     return (
