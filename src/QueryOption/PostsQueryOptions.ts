@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query"
 import axios from "axios"
 
 type Posts = {
-  id: number;
+  id: string;
   title: string;
   content: string;
   author: string;

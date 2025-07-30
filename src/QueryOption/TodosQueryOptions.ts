@@ -1,17 +1,18 @@
-import { queryOptions } from "@tanstack/react-query";
-import axios from "axios";
+import { queryOptions } from "@tanstack/react-query"
+import axios from "axios"
 
 type Todos = {
-  id: number;
+  id: string
   title: string
 }
 
 export default function TodosQueryOptions() {
   return queryOptions({
-    queryKey: ['Todos'],
+    queryKey: ["Todos"],
     queryFn: async () => {
-      const reposnse = await axios.get<Todos[]>("http://localhost:4001/Todos")
-      return reposnse.data;
-    }
+      const response = await axios.get<Todos[]>("http://localhost:4001/Todos")
+      return response.data
+    },
+    staleTime: 1000 * 60 * 5, // 5 minutes
   })
 }
