@@ -1,56 +1,68 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import PostsQueryOptions from "../QueryOption/PostsQueryOptions";
-import createPostMutationOptions from "../QueryOption/createPostMutationOptions";
-import { Button } from "../components/ui/button";
-import { Trash2 } from "lucide-react";
-import axios from "axios";
-import { queryClient } from "../lib/queryClient";
+import { useQuery, useMutation } from "@tanstack/react-query"
+import PostsQueryOptions from "../QueryOption/PostsQueryOptions"
+import createPostMutationOptions from "../QueryOption/createPostMutationOptions"
+import { Button } from "../components/ui/button"
+import { Trash2, PlusCircle } from "lucide-react"
+import axios from "axios"
+import { queryClient } from "../lib/queryClient"
 
 export function PostsList() {
-  const { data: posts, isLoading } = useQuery(PostsQueryOptions());
-  const { mutate: createPost, isPending: isCreating } = useMutation(createPostMutationOptions());
+  const { data: posts, isLoading } = useQuery(PostsQueryOptions())
+  const { mutate: createPost, isPending: isCreating } = useMutation(
+    createPostMutationOptions()
+  )
   const { mutate: deletePost, isPending: isDeleting } = useMutation({
     mutationFn: async (postId: number) => {
-      await axios.delete(`http://localhost:4001/posts/${postId}`);
-      return postId;
+      await axios.delete(`http://localhost:4001/posts/${postId}`)
+      return postId
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
-    }
-  });
+      queryClient.invalidateQueries({ queryKey: ["posts"] })
+    },
+  })
 
   if (isLoading) {
-    return <div>Loading posts...</div>;
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="text-lg text-muted-foreground">Loading posts...</div>
+      </div>
+    )
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center overflow-y-auto sticky top-0 bg-background p-4">
-        <h2 className="text-2xl font-bold">Posts</h2>
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold tracking-tight">Posts</h1>
         <Button
           onClick={() => createPost()}
           disabled={isCreating}
+          className="flex items-center gap-2"
         >
-          {isCreating ? "Creating..." : "Create Random Post"}
+          <PlusCircle className="h-5 w-5" />
+          <span>{isCreating ? "Creating..." : "Create Post"}</span>
         </Button>
       </div>
 
-      <div className="grid gap-4">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts?.map((post) => (
           <div
             key={post.id}
-            className="p-4 rounded-lg border bg-card text-card-foreground shadow-sm"
+            className="bg-card text-card-foreground rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
           >
-            <div className="flex justify-between items-start">
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold">{post.title}</h3>
-                <p className="text-sm text-muted-foreground">{post.content}</p>
-                <p className="text-sm text-muted-foreground">By {post.author}</p>
-              </div>
+            <div className="p-6 flex-grow space-y-4">
+              <h3 className="text-xl font-semibold leading-tight">
+                {post.title}
+              </h3>
+              <p className="text-muted-foreground text-sm">{post.content}</p>
+              <p className="text-xs text-muted-foreground pt-2">
+                By {post.author}
+              </p>
+            </div>
+            <div className="p-4 border-t flex justify-end">
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-red-500 hover:text-red-700 hover:bg-red-100"
+                className="text-red-500 hover:text-red-700 hover:bg-red-100 rounded-full h-8 w-8"
                 onClick={() => deletePost(post.id)}
                 disabled={isDeleting}
               >
@@ -62,5 +74,5 @@ export function PostsList() {
         ))}
       </div>
     </div>
-  );
+  )
 }

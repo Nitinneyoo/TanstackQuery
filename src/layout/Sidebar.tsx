@@ -2,16 +2,28 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Link } from "@tanstack/react-router"
-import { LayoutDashboard, Menu, X, FileText } from "lucide-react"
+import {
+  LayoutDashboard,
+  Menu,
+  X,
+  FileText,
+  PanelLeft,
+  ListTodo,
+} from "lucide-react"
 import { useState } from "react"
 
-interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> { }
+interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const sidebarItems = [
   {
     title: "Dashboard",
     icon: LayoutDashboard,
     href: "/",
+  },
+  {
+    title: "Todos",
+    icon: ListTodo,
+    href: "/todos",
   },
   {
     title: "About",
@@ -21,7 +33,7 @@ const sidebarItems = [
 ]
 
 export function Sidebar({ className }: SidebarProps) {
-  const [collapsed, setCollapsed] = useState(true)
+  const [collapsed, setCollapsed] = useState(false)
 
   return (
     <div
@@ -39,7 +51,8 @@ export function Sidebar({ className }: SidebarProps) {
             collapsed && "justify-center"
           )}
         >
-          {!collapsed && <span>TanStack Query</span>}
+          <PanelLeft className="h-6 w-6" />
+          {!collapsed && <span>Admin</span>}
         </Link>
         <Button
           variant="ghost"
@@ -55,17 +68,17 @@ export function Sidebar({ className }: SidebarProps) {
         </Button>
       </div>
       <ScrollArea className="flex-1">
-        <nav className="flex flex-col gap-2 p-2">
+        <nav className="grid items-start gap-2 p-2">
           {sidebarItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-foreground/60 transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               activeProps={{
-                className: "bg-accent text-accent-foreground font-medium"
+                className: "bg-muted text-primary font-medium",
               }}
             >
-              <item.icon className="h-6 w-6" />
+              <item.icon className="h-5 w-5" />
               {!collapsed && <span>{item.title}</span>}
             </Link>
           ))}
