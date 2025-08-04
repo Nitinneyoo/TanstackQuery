@@ -35,10 +35,6 @@
     {
       "id": "1",
       "title": "Learn Tanstack Query"
-    },
-    {
-      "id": "2",
-      "title": "Learn React Router"
     }
   ],
   "Fruits": [
@@ -63,7 +59,7 @@
       "name": "Elderberry"
     },
     {
-      "id" : "6",
+      "id": "6",
       "name": "Fig"
     },
     {
@@ -131,7 +127,7 @@
       "name": "Strawberry"
     },
     {
-      "id": "23", 
+      "id": "23",
       "name": "Tangerine"
     },
     {

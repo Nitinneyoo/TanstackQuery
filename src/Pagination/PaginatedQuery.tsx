@@ -30,12 +30,12 @@ const fetchFruitsWithCount = async (page: number, limit: number) => {
  */
 const generatePagination = (currentPage: number, totalPages: number) => {
   // If there are 7 or fewer pages, show all of them
-  if (totalPages <= 7) {
+  if (totalPages <= 3) {
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
   // If the current page is near the beginning
-  if (currentPage <= 3) {
+  if (currentPage <= 2) {
     return [1, 2, 3, 4, "...", totalPages];
   }
 

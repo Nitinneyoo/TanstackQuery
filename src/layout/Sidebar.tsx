@@ -1,10 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  FileText,
-  LayoutDashboard,
-  ListTodo,
-  PanelLeft,
-} from "lucide-react";
+import { File, FileText, LayoutDashboard, ListTodo, PanelLeft } from "lucide-react";
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
@@ -29,9 +24,10 @@ const sidebarItems = [
   },
   {
     title: "Paginated Queries",
-    icon: FileText,
+    icon: File,
     href: "/paginatedqueries",
   },
+
 ];
 
 export function Sidebar({ className }: SidebarProps) {
