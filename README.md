@@ -1,5 +1,22 @@
 # React + TypeScript + Vite
 
+TO run this clone this repo
+
+cd repo name
+
+use
+bun install
+or
+npm install
+
+after that to start the application
+
+ bun run dev
+
+ and start the json server
+
+ bun run serve
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

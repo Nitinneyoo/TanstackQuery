@@ -1,12 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "TanStack Query",
-      "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
-      "author": "Nitin Singh"
-    },
-    {
       "id": "5aea",
       "title": "Music Update 2:13:29 PM",
       "content": "This is a randomly generated post about music created at 8/4/2025, 2:13:29 PM",
@@ -29,6 +23,30 @@
       "title": "Science Update 2:13:59 PM",
       "content": "This is a randomly generated post about science created at 8/4/2025, 2:13:59 PM",
       "author": "Alice Johnson"
+    },
+    {
+      "title": "Art Update 6:43:05 PM",
+      "content": "This is a randomly generated post about art created at 8/4/2025, 6:43:05 PM",
+      "author": "Jane Smith",
+      "id": "JHFpLVX"
+    },
+    {
+      "title": "Music Update 6:43:07 PM",
+      "content": "This is a randomly generated post about music created at 8/4/2025, 6:43:07 PM",
+      "author": "Jane Smith",
+      "id": "FSJcG2Z"
+    },
+    {
+      "title": "Food Update 6:43:13 PM",
+      "content": "This is a randomly generated post about food created at 8/4/2025, 6:43:13 PM",
+      "author": "Alice Johnson",
+      "id": "t78nfti"
+    },
+    {
+      "title": "Technology Update 6:43:17 PM",
+      "content": "This is a randomly generated post about technology created at 8/4/2025, 6:43:17 PM",
+      "author": "Jane Smith",
+      "id": "AQv0amQ"
     }
   ],
   "Todos": [
