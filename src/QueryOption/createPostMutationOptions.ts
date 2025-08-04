@@ -1,7 +1,7 @@
 import { mutationOptions } from "@tanstack/react-query";
 import axios from "axios";
-import { generateRandomPost } from "../utils/randomPostGenerator";
 import { queryClient } from "../lib/queryClient";
+import { generateRandomPost } from "../utils/randomPostGenerator";
 
 const createPostMutationOptions = () => {
   return mutationOptions({

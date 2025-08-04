@@ -1,14 +1,14 @@
 // src/routes/todos.tsx
-import { createFileRoute } from '@tanstack/react-router'
-import TodosScreen from '@/TodosPage/TodosScreen'
-import { Suspense } from 'react'
-import TodosQueryOptions from '@/QueryOption/TodosQueryOptions'
-import { queryClient } from '@/lib/queryClient'
+import { createFileRoute } from "@tanstack/react-router";
+import { Suspense } from "react";
+import { queryClient } from "@/lib/queryClient";
+import TodosQueryOptions from "@/QueryOption/TodosQueryOptions";
+import TodosScreen from "@/TodosPage/TodosScreen";
 
-export const Route = createFileRoute('/todos')({
+export const Route = createFileRoute("/todos")({
   component: TodosComponent,
   loader: () => queryClient.ensureQueryData(TodosQueryOptions()),
-})
+});
 
 function TodosComponent() {
   return (
@@ -21,5 +21,5 @@ function TodosComponent() {
     >
       <TodosScreen />
     </Suspense>
-  )
+  );
 }

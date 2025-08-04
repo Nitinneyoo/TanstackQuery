@@ -1,5 +1,5 @@
-import { Sidebar } from '@/layout/Sidebar'
-import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { Sidebar } from "@/layout/Sidebar";
 
 export const Route = createRootRoute({
   component: () => (
@@ -10,4 +10,4 @@ export const Route = createRootRoute({
       </main>
     </div>
   ),
-})
+});
