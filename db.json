@@ -5,6 +5,30 @@
       "title": "TanStack Query",
       "content": "TanStack Query is a powerful data-fetching library for React applications, providing efficient caching and synchronization of server state.",
       "author": "Nitin Singh"
+    },
+    {
+      "id": "5aea",
+      "title": "Music Update 2:13:29 PM",
+      "content": "This is a randomly generated post about music created at 8/4/2025, 2:13:29 PM",
+      "author": "Alice Johnson"
+    },
+    {
+      "id": "a888",
+      "title": "Travel Update 2:13:41 PM",
+      "content": "This is a randomly generated post about travel created at 8/4/2025, 2:13:41 PM",
+      "author": "Bob Wilson"
+    },
+    {
+      "id": "1507",
+      "title": "Music Update 2:13:46 PM",
+      "content": "This is a randomly generated post about music created at 8/4/2025, 2:13:46 PM",
+      "author": "Emma Davis"
+    },
+    {
+      "id": "754e",
+      "title": "Science Update 2:13:59 PM",
+      "content": "This is a randomly generated post about science created at 8/4/2025, 2:13:59 PM",
+      "author": "Alice Johnson"
     }
   ],
   "Todos": [
@@ -15,6 +39,104 @@
     {
       "id": "2",
       "title": "Learn React Router"
+    }
+  ],
+  "Fruits": [
+    {
+      "id": "1",
+      "name": "Apple"
+    },
+    {
+      "id": "2",
+      "name": "Banana"
+    },
+    {
+      "id": "3",
+      "name": "Cherry"
+    },
+    {
+      "id": "4",
+      "name": "Date"
+    },
+    {
+      "id": "5",
+      "name": "Elderberry"
+    },
+    {
+      "id" : "6",
+      "name": "Fig"
+    },
+    {
+      "id": "7",
+      "name": "Grape"
+    },
+    {
+      "id": "8",
+      "name": "Honeydew"
+    },
+    {
+      "id": "9",
+      "name": "Kiwi"
+    },
+    {
+      "id": "10",
+      "name": "Lemon"
+    },
+    {
+      "id": "11",
+      "name": "Mango"
+    },
+    {
+      "id": "12",
+      "name": "Nectarine"
+    },
+    {
+      "id": "13",
+      "name": "Orange"
+    },
+    {
+      "id": "14",
+      "name": "Papaya"
+    },
+    {
+      "id": "15",
+      "name": "Quince"
+    },
+    {
+      "id": "16",
+      "name": "Raspberry"
+    },
+    {
+      "id": "17",
+      "name": "Strawberry"
+    },
+    {
+      "id": "18",
+      "name": "Tangerine"
+    },
+    {
+      "id": "19",
+      "name": "Ugli fruit"
+    },
+    {
+      "id": "20",
+      "name": "Vanilla bean"
+    },
+    {
+      "id": "21",
+      "name": "Raspberry"
+    },
+    {
+      "id": "22",
+      "name": "Strawberry"
+    },
+    {
+      "id": "23", 
+      "name": "Tangerine"
+    },
+    {
+      "id": "24",
+      "name": "Ugli fruit"
     }
   ]
 }

@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TodosRouteImport } from './routes/todos'
+import { Route as PaginatedqueriesRouteImport } from './routes/paginatedqueries'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TodosRoute = TodosRouteImport.update({
   id: '/todos',
   path: '/todos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaginatedqueriesRoute = PaginatedqueriesRouteImport.update({
+  id: '/paginatedqueries',
+  path: '/paginatedqueries',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/paginatedqueries': typeof PaginatedqueriesRoute
   '/todos': typeof TodosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/paginatedqueries': typeof PaginatedqueriesRoute
   '/todos': typeof TodosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/paginatedqueries': typeof PaginatedqueriesRoute
   '/todos': typeof TodosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/todos'
+  fullPaths: '/' | '/about' | '/paginatedqueries' | '/todos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/todos'
-  id: '__root__' | '/' | '/about' | '/todos'
+  to: '/' | '/about' | '/paginatedqueries' | '/todos'
+  id: '__root__' | '/' | '/about' | '/paginatedqueries' | '/todos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  PaginatedqueriesRoute: typeof PaginatedqueriesRoute
   TodosRoute: typeof TodosRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/todos'
       fullPath: '/todos'
       preLoaderRoute: typeof TodosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paginatedqueries': {
+      id: '/paginatedqueries'
+      path: '/paginatedqueries'
+      fullPath: '/paginatedqueries'
+      preLoaderRoute: typeof PaginatedqueriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  PaginatedqueriesRoute: PaginatedqueriesRoute,
   TodosRoute: TodosRoute,
 }
 export const routeTree = rootRouteImport

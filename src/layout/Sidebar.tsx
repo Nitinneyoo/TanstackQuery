@@ -27,6 +27,11 @@ const sidebarItems = [
     icon: FileText,
     href: "/about",
   },
+  {
+    title: "Paginated Queries",
+    icon: FileText,
+    href: "/paginatedqueries",
+  },
 ];
 
 export function Sidebar({ className }: SidebarProps) {

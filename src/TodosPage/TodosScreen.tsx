@@ -1,20 +1,22 @@
 // src/TodosPage/TodosScreen.tsx
 import { useQuery } from "@tanstack/react-query";
-import TodosQueryOptions from "@/QueryOption/TodosQueryOptions";
-import { Button } from "@/components/ui/button";
-import { Trash2, PlusCircle } from "lucide-react";
+import { PlusCircle, Trash2 } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCreateTodoMutation } from "@/QueryOption/createTodoMutationOptions";
 import { useDeleteTodoMutation } from "@/QueryOption/deleteTodoMutationOptions";
+import TodosQueryOptions from "@/QueryOption/TodosQueryOptions";
 
 export default function TodosScreen() {
   const [newTodo, setNewTodo] = useState("");
   const { data: todos, isLoading } = useQuery(TodosQueryOptions());
 
-  const { mutate: createTodo, isPending: isCreating } = useCreateTodoMutation(() => {
-    setNewTodo("");
-  });
+  const { mutate: createTodo, isPending: isCreating } = useCreateTodoMutation(
+    () => {
+      setNewTodo("");
+    },
+  );
 
   const { mutate: deleteTodo, isPending: isDeleting } = useDeleteTodoMutation();
 
