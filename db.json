@@ -47,6 +47,12 @@
       "content": "This is a randomly generated post about technology created at 8/4/2025, 6:43:17 PM",
       "author": "Jane Smith",
       "id": "AQv0amQ"
+    },
+    {
+      "title": "Technology Update 5:55:39 PM",
+      "content": "This is a randomly generated post about technology created at 8/7/2025, 5:55:39 PM",
+      "author": "John Doe",
+      "id": "LhVMqS1"
     }
   ],
   "Todos": [
@@ -55,102 +61,234 @@
       "title": "Learn Tanstack Query"
     }
   ],
+  "Users": [
+    {
+      "id": 1,
+      "name": "Nitin Singh",
+      "email": "nitin@example.com",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "name": "Shiva Kumar",
+      "email": "shiva@example.com",
+      "role": "User"
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "User"
+    },
+    {
+      "id": 4,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "Manager"
+    },
+    {
+      "id": 5,
+      "name": "Bob Wilson",
+      "email": "bob@example.com",
+      "role": "User"
+    },
+    {
+      "id": 6,
+      "name": "Emma Davis",
+      "email": "emma@example.com",
+      "role": "Admin"
+    },
+    {
+      "id": 7,
+      "name": "Mike Brown",
+      "email": "mike@example.com",
+      "role": "User"
+    },
+    {
+      "id": 8,
+      "name": "Sarah Wilson",
+      "email": "sarah@example.com",
+      "role": "Manager"
+    }
+  ],
+  "Tasks": [
+    {
+      "id": 1,
+      "task": "Add a New Feature",
+      "status": "On Deck",
+      "due": "2023-10-15",
+      "notes": "This is a note"
+    },
+    {
+      "id": 2,
+      "task": "Fix Bug in Login",
+      "status": "In Progress",
+      "due": "2023-10-20",
+      "notes": "Critical bug fix"
+    },
+    {
+      "id": 3,
+      "task": "Update Documentation",
+      "status": "Testing",
+      "due": "2023-10-25",
+      "notes": "Update API docs"
+    },
+    {
+      "id": 4,
+      "task": "Deploy to Production",
+      "status": "Deployed",
+      "due": "2023-10-30",
+      "notes": "Final deployment"
+    },
+    {
+      "id": 5,
+      "task": "Code Review",
+      "status": "On Deck",
+      "due": "2023-11-05",
+      "notes": "Review pull requests"
+    },
+    {
+      "id": 6,
+      "task": "Database Migration",
+      "status": "In Progress",
+      "due": "2023-11-10",
+      "notes": "Migrate to new schema"
+    },
+    {
+      "id": 7,
+      "task": "Performance Testing",
+      "status": "Testing",
+      "due": "2023-11-15",
+      "notes": "Load testing required"
+    },
+    {
+      "id": 8,
+      "task": "Security Audit",
+      "status": "On Deck",
+      "due": "2023-11-20",
+      "notes": "Security review"
+    }
+  ],
   "Fruits": [
     {
-      "id": "1",
-      "name": "Apple"
+      "id": 1,
+      "name": "Apple",
+      "color": "Red",
+      "season": "Fall"
     },
     {
-      "id": "2",
-      "name": "Banana"
+      "id": 2,
+      "name": "Banana",
+      "color": "Yellow",
+      "season": "Year-round"
     },
     {
-      "id": "3",
-      "name": "Cherry"
+      "id": 3,
+      "name": "Cherry",
+      "color": "Red",
+      "season": "Summer"
     },
     {
-      "id": "4",
-      "name": "Date"
+      "id": 4,
+      "name": "Date",
+      "color": "Brown",
+      "season": "Fall"
     },
     {
-      "id": "5",
-      "name": "Elderberry"
+      "id": 5,
+      "name": "Elderberry",
+      "color": "Purple",
+      "season": "Fall"
     },
     {
-      "id": "6",
-      "name": "Fig"
+      "id": 6,
+      "name": "Fig",
+      "color": "Purple",
+      "season": "Summer"
     },
     {
-      "id": "7",
-      "name": "Grape"
+      "id": 7,
+      "name": "Grape",
+      "color": "Purple",
+      "season": "Fall"
     },
     {
-      "id": "8",
-      "name": "Honeydew"
+      "id": 8,
+      "name": "Honeydew",
+      "color": "Green",
+      "season": "Summer"
     },
     {
-      "id": "9",
-      "name": "Kiwi"
+      "id": 9,
+      "name": "Kiwi",
+      "color": "Brown",
+      "season": "Winter"
     },
     {
-      "id": "10",
-      "name": "Lemon"
+      "id": 10,
+      "name": "Lemon",
+      "color": "Yellow",
+      "season": "Winter"
     },
     {
-      "id": "11",
-      "name": "Mango"
+      "id": 11,
+      "name": "Mango",
+      "color": "Orange",
+      "season": "Summer"
     },
     {
-      "id": "12",
-      "name": "Nectarine"
+      "id": 12,
+      "name": "Nectarine",
+      "color": "Orange",
+      "season": "Summer"
     },
     {
-      "id": "13",
-      "name": "Orange"
+      "id": 13,
+      "name": "Orange",
+      "color": "Orange",
+      "season": "Winter"
     },
     {
-      "id": "14",
-      "name": "Papaya"
+      "id": 14,
+      "name": "Papaya",
+      "color": "Orange",
+      "season": "Year-round"
     },
     {
-      "id": "15",
-      "name": "Quince"
+      "id": 15,
+      "name": "Quince",
+      "color": "Yellow",
+      "season": "Fall"
     },
     {
-      "id": "16",
-      "name": "Raspberry"
+      "id": 16,
+      "name": "Raspberry",
+      "color": "Red",
+      "season": "Summer"
     },
     {
-      "id": "17",
-      "name": "Strawberry"
+      "id": 17,
+      "name": "Strawberry",
+      "color": "Red",
+      "season": "Spring"
     },
     {
-      "id": "18",
-      "name": "Tangerine"
+      "id": 18,
+      "name": "Tangerine",
+      "color": "Orange",
+      "season": "Winter"
     },
     {
-      "id": "19",
-      "name": "Ugli fruit"
+      "id": 19,
+      "name": "Ugli fruit",
+      "color": "Green",
+      "season": "Winter"
     },
     {
-      "id": "20",
-      "name": "Vanilla bean"
-    },
-    {
-      "id": "21",
-      "name": "Raspberry"
-    },
-    {
-      "id": "22",
-      "name": "Strawberry"
-    },
-    {
-      "id": "23",
-      "name": "Tangerine"
-    },
-    {
-      "id": "24",
-      "name": "Ugli fruit"
+      "id": 20,
+      "name": "Vanilla bean",
+      "color": "Brown",
+      "season": "Year-round"
     }
   ]
 }

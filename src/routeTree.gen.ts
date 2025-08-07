@@ -9,19 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UsersRouteImport } from './routes/users'
 import { Route as TodosRouteImport } from './routes/todos'
+import { Route as TasksRouteImport } from './routes/tasks'
 import { Route as PaginatedqueriesRouteImport } from './routes/paginatedqueries'
+import { Route as FruitsRouteImport } from './routes/fruits'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UsersRoute = UsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TodosRoute = TodosRouteImport.update({
   id: '/todos',
   path: '/todos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TasksRoute = TasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaginatedqueriesRoute = PaginatedqueriesRouteImport.update({
   id: '/paginatedqueries',
   path: '/paginatedqueries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FruitsRoute = FruitsRouteImport.update({
+  id: '/fruits',
+  path: '/fruits',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -38,39 +56,80 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/fruits': typeof FruitsRoute
   '/paginatedqueries': typeof PaginatedqueriesRoute
+  '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/fruits': typeof FruitsRoute
   '/paginatedqueries': typeof PaginatedqueriesRoute
+  '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/fruits': typeof FruitsRoute
   '/paginatedqueries': typeof PaginatedqueriesRoute
+  '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/paginatedqueries' | '/todos'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/fruits'
+    | '/paginatedqueries'
+    | '/tasks'
+    | '/todos'
+    | '/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/paginatedqueries' | '/todos'
-  id: '__root__' | '/' | '/about' | '/paginatedqueries' | '/todos'
+  to:
+    | '/'
+    | '/about'
+    | '/fruits'
+    | '/paginatedqueries'
+    | '/tasks'
+    | '/todos'
+    | '/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/fruits'
+    | '/paginatedqueries'
+    | '/tasks'
+    | '/todos'
+    | '/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  FruitsRoute: typeof FruitsRoute
   PaginatedqueriesRoute: typeof PaginatedqueriesRoute
+  TasksRoute: typeof TasksRoute
   TodosRoute: typeof TodosRoute
+  UsersRoute: typeof UsersRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/users': {
+      id: '/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof UsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/todos': {
       id: '/todos'
       path: '/todos'
@@ -78,11 +137,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TodosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tasks': {
+      id: '/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof TasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/paginatedqueries': {
       id: '/paginatedqueries'
       path: '/paginatedqueries'
       fullPath: '/paginatedqueries'
       preLoaderRoute: typeof PaginatedqueriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fruits': {
+      id: '/fruits'
+      path: '/fruits'
+      fullPath: '/fruits'
+      preLoaderRoute: typeof FruitsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -105,8 +178,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  FruitsRoute: FruitsRoute,
   PaginatedqueriesRoute: PaginatedqueriesRoute,
+  TasksRoute: TasksRoute,
   TodosRoute: TodosRoute,
+  UsersRoute: UsersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,5 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { File, FileText, LayoutDashboard, ListTodo, PanelLeft } from "lucide-react";
+import {
+  Apple,
+  CheckSquare,
+
+  FileText,
+  LayoutDashboard,
+  ListTodo,
+  PanelLeft,
+  Users,
+} from "lucide-react";
 import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
@@ -18,14 +27,24 @@ const sidebarItems = [
     href: "/todos",
   },
   {
+    title: "Users",
+    icon: Users,
+    href: "/users",
+  },
+  {
+    title: "Tasks",
+    icon: CheckSquare,
+    href: "/tasks",
+  },
+  {
+    title: "Fruits",
+    icon: Apple,
+    href: "/fruits",
+  },
+  {
     title: "About",
     icon: FileText,
     href: "/about",
-  },
-  {
-    title: "Paginated Queries",
-    icon: File,
-    href: "/paginatedqueries",
   },
 
 ];
