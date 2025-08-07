@@ -8,7 +8,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Pagination,
   PaginationContent,
@@ -100,7 +100,28 @@ export function PaginatedTable<T extends { id: number }>({
   endpoint,
   title,
 }: PaginatedTableProps<T>) {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return Number(params.get("page")) || 1;
+  });
+
+  // Update URL when page changes
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set("page", String(page));
+    params.set("limit", String(LIMIT));
+    window.history.pushState(null, "", `?${params.toString()}`);
+  }, [page]);
+
+  // Handle browser back/forward
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      setPage(Number(params.get("page")) || 1);
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const {
     data: queryData,

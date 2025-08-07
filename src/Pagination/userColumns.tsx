@@ -1,4 +1,16 @@
 import type { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge";
+
+const getRoleInfo = (role: string) => {
+  switch (role) {
+    case 'Admin':
+      return { color: 'bg-red-100 text-red-800', text: 'Admin' };
+    case 'Manager':
+      return { color: 'bg-yellow-100 text-yellow-800', text: 'Manager' };
+    default:
+      return { color: 'bg-green-100 text-green-800', text: role };
+  }
+};
 
 type User = {
   id: number;
@@ -26,14 +38,10 @@ export const userColumns: ColumnDef<User>[] = [
   {
     accessorKey: "role",
     header: "Role",
-    cell: (info) => (
-      <span className={`px-2 py-1 rounded text-xs ${
-        (info.getValue() as string) === 'Admin' ? 'bg-red-100 text-red-800' :
-        (info.getValue() as string) === 'Manager' ? 'bg-yellow-100 text-yellow-800' :
-        'bg-green-100 text-green-800'
-      }`}>
-        {info.getValue() as string}
-      </span>
-    ),
+    cell: (info) => {
+      const role = info.getValue() as string;
+      const roleInfo = getRoleInfo(role);
+      return <Badge className={roleInfo.color}>{roleInfo.text}</Badge>;
+    },
   },
 ];

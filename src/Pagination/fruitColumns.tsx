@@ -1,4 +1,24 @@
 import type { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge";
+
+const getColorInfo = (color: string) => {
+  switch (color) {
+    case 'Red':
+      return { color: 'bg-red-100 text-red-800', text: 'Red' };
+    case 'Yellow':
+      return { color: 'bg-yellow-100 text-yellow-800', text: 'Yellow' };
+    case 'Orange':
+      return { color: 'bg-orange-100 text-orange-800', text: 'Orange' };
+    case 'Purple':
+      return { color: 'bg-purple-100 text-purple-800', text: 'Purple' };
+    case 'Green':
+      return { color: 'bg-green-100 text-green-800', text: 'Green' };
+    case 'Brown':
+      return { color: 'bg-amber-100 text-amber-800', text: 'Brown' };
+    default:
+      return { color: 'bg-gray-100 text-gray-800', text: color };
+  }
+};
 
 type Fruit = {
   id: number;
@@ -23,19 +43,8 @@ export const fruitColumns: ColumnDef<Fruit>[] = [
     header: "Color",
     cell: (info) => {
       const color = info.getValue() as string;
-      return (
-        <span className={`px-2 py-1 rounded text-xs ${
-          color === 'Red' ? 'bg-red-100 text-red-800' :
-          color === 'Yellow' ? 'bg-yellow-100 text-yellow-800' :
-          color === 'Orange' ? 'bg-orange-100 text-orange-800' :
-          color === 'Purple' ? 'bg-purple-100 text-purple-800' :
-          color === 'Green' ? 'bg-green-100 text-green-800' :
-          color === 'Brown' ? 'bg-amber-100 text-amber-800' :
-          'bg-gray-100 text-gray-800'
-        }`}>
-          {color}
-        </span>
-      );
+      const colorInfo = getColorInfo(color);
+      return <Badge className={colorInfo.color}>{colorInfo.text}</Badge>;
     },
   },
   {

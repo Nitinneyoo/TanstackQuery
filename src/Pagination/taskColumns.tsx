@@ -1,4 +1,20 @@
 import type { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge";
+
+const getStatusInfo = (status: string) => {
+  switch (status) {
+    case 'On Deck':
+      return { color: 'bg-blue-100 text-blue-800', text: 'On Deck' };
+    case 'In Progress':
+      return { color: 'bg-yellow-100 text-yellow-800', text: 'In Progress' };
+    case 'Testing':
+      return { color: 'bg-pink-100 text-pink-800', text: 'Testing' };
+    case 'Deployed':
+      return { color: 'bg-green-100 text-green-800', text: 'Deployed' };
+    default:
+      return { color: 'bg-gray-100 text-gray-800', text: status };
+  }
+};
 
 type Task = {
   id: number;
@@ -24,17 +40,8 @@ export const taskColumns: ColumnDef<Task>[] = [
     header: "Status",
     cell: (info) => {
       const status = info.getValue() as string;
-      return (
-        <span className={`px-2 py-1 rounded text-xs ${
-          status === 'On Deck' ? 'bg-blue-100 text-blue-800' :
-          status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
-          status === 'Testing' ? 'bg-pink-100 text-pink-800' :
-          status === 'Deployed' ? 'bg-green-100 text-green-800' :
-          'bg-gray-100 text-gray-800'
-        }`}>
-          {status}
-        </span>
-      );
+      const statusInfo = getStatusInfo(status);
+      return <Badge className={statusInfo.color}>{statusInfo.text}</Badge>;
     },
   },
   {
