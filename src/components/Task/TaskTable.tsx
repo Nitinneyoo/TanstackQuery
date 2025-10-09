@@ -1,4 +1,4 @@
-import { PaginatedTable } from "../components/CustomComponents/DataTable";
+import { PaginatedTable } from "../CustomComponents/DataTable";
 import { taskColumns } from "./taskColumns";
 
 type Task = {

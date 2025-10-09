@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsersRouteImport } from './routes/users'
 import { Route as TodosRouteImport } from './routes/todos'
 import { Route as TasksRouteImport } from './routes/tasks'
+import { Route as HabitRouteImport } from './routes/habit'
 import { Route as FruitsRouteImport } from './routes/fruits'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const TodosRoute = TodosRouteImport.update({
 const TasksRoute = TasksRouteImport.update({
   id: '/tasks',
   path: '/tasks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HabitRoute = HabitRouteImport.update({
+  id: '/habit',
+  path: '/habit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FruitsRoute = FruitsRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fruits': typeof FruitsRoute
+  '/habit': typeof HabitRoute
   '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
   '/users': typeof UsersRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fruits': typeof FruitsRoute
+  '/habit': typeof HabitRoute
   '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
   '/users': typeof UsersRoute
@@ -68,22 +76,39 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/fruits': typeof FruitsRoute
+  '/habit': typeof HabitRoute
   '/tasks': typeof TasksRoute
   '/todos': typeof TodosRoute
   '/users': typeof UsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/fruits' | '/tasks' | '/todos' | '/users'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/fruits'
+    | '/habit'
+    | '/tasks'
+    | '/todos'
+    | '/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/fruits' | '/tasks' | '/todos' | '/users'
-  id: '__root__' | '/' | '/about' | '/fruits' | '/tasks' | '/todos' | '/users'
+  to: '/' | '/about' | '/fruits' | '/habit' | '/tasks' | '/todos' | '/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/fruits'
+    | '/habit'
+    | '/tasks'
+    | '/todos'
+    | '/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   FruitsRoute: typeof FruitsRoute
+  HabitRoute: typeof HabitRoute
   TasksRoute: typeof TasksRoute
   TodosRoute: typeof TodosRoute
   UsersRoute: typeof UsersRoute
@@ -110,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/tasks'
       fullPath: '/tasks'
       preLoaderRoute: typeof TasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/habit': {
+      id: '/habit'
+      path: '/habit'
+      fullPath: '/habit'
+      preLoaderRoute: typeof HabitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fruits': {
@@ -140,6 +172,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   FruitsRoute: FruitsRoute,
+  HabitRoute: HabitRoute,
   TasksRoute: TasksRoute,
   TodosRoute: TodosRoute,
   UsersRoute: UsersRoute,

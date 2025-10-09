@@ -1,3 +1,4 @@
+
 export default function Aboutscreen() {
   return (
     <div className="bg-background text-foreground p-4 sm:p-6 md:p-8">
@@ -62,6 +63,7 @@ export default function Aboutscreen() {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

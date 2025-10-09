@@ -1,10 +1,10 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { PlusCircle, Trash2 } from "lucide-react";
-import { Button } from "../components/ui/button";
-import { queryClient } from "../lib/queryClient";
-import createPostMutationOptions from "../QueryOption/createPostMutationOptions";
-import PostsQueryOptions from "../QueryOption/PostsQueryOptions";
+import { queryClient } from "../../lib/queryClient";
+import createPostMutationOptions from "../../QueryOption/createPostMutationOptions";
+import PostsQueryOptions from "../../QueryOption/PostsQueryOptions";
+import { Button } from "../ui/button";
 
 export function PostsList() {
   const { data: posts, isLoading } = useQuery(PostsQueryOptions());
