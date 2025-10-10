@@ -22,12 +22,12 @@ export interface Fruit {
 
 
 export interface Habit {
-  id: number
-  title: string
-  description: string
-  completed: boolean
-  frequency: 'daily' | 'weekly' | 'monthly'
-  name: string
-  createdAt: string
-  completedDates: string[]
+  id?: string
+  title?: string
+  description?: string
+  completed?: boolean
+  frequency?: 'daily' | 'weekly' | 'monthly'
+  name?: string
+  createdAt?: string
+  completedDates?: string[]
 }

@@ -11,19 +11,7 @@ const useHabitStore = create<HabitStore>()((set) => {
     habits: [],
     addHabit: (name, frequency, description) =>
       set((state) => {
-        const newHabit: Habit = {
-          id: state.habits.length + 1,
-          title: name,
-          description: description,
-          completed: false,
-          frequency,
-          name,
-          createdAt: new Date().toISOString(),
-          completedDates: [],
-        };
-        // console.log("Adding new habit:", newHabit);
-
-        return { habits: [...state.habits, newHabit] };
+        return { habits: [...state.habits, { id: Date.now().toString(), name, frequency, description }] };
       }),
   };
 });

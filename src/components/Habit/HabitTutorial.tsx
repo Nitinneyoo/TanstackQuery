@@ -1,11 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
 import AddHabbitForm from "./AddHabbitForm";
-
-// import useHabitStore from "@/store/HabitStore";
+import HabitShowcase from "./HabitShowcase";
 
 function HabitTutorial() {
-  // const store = useHabitStore();
-  // console.log(store);
   return (
     <Container>
       <Box>
@@ -18,6 +15,10 @@ function HabitTutorial() {
           This is Habit Tutorial Page
         </Typography>
         <AddHabbitForm />
+        <div className="my-8">
+
+          <HabitShowcase />
+        </div>
       </Box>
     </Container>
   );

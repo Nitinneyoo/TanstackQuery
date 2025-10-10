@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Card,
   FormControl,
   InputLabel,
   MenuItem,
@@ -18,8 +19,8 @@ const AddHabbitForm = () => {
     "daily",
   );
 
-  const { habits, addHabit } = useHabitStore();
 
+  const addHabit = useHabitStore((state) => state.addHabit)
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) {
@@ -70,11 +71,7 @@ const AddHabbitForm = () => {
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            4
-
-            // Call the addHabit function from the store
             useHabitStore.getState().addHabit(name, frequency, description);
-            // Reset form fields
             setName("");
             setFrequency("daily");
             setDescription("");
@@ -82,6 +79,7 @@ const AddHabbitForm = () => {
         >
           Add Habbit
         </Button>
+
       </Box>
     </form>
   );
